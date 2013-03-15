@@ -17,9 +17,9 @@ Features:
     * Simplified feedback interface
 
 pyapns is an APNS provider that you install on your server and access through XML-RPC.
-To install you will need Python, Twisted_ and pyOpenSSL_. It's also recommended to 
-install `python-epoll`_ for best performance (if epoll is not available, like on 
-Mac OS X, you may want to use another library, like `py-kqueue`_. If you like 
+To install you will need Python, Twisted_ and pyOpenSSL_. It's also recommended to
+install `python-epoll`_ for best performance (if epoll is not available, like on
+Mac OS X, you may want to use another library, like `py-kqueue`_. If you like
 easy_install try (it should take care of the dependancies for you)::
 
     $ sudo pip install pyapns
@@ -36,22 +36,22 @@ To get started right away, use the included client::
     >>> provision('myapp', open('cert.pem').read(), 'sandbox')
     >>> notify('myapp', 'hexlified_token_str', {'aps':{'alert': 'Hello!'}})
 
-A lot more documentation and the issue tracker can be found on the `github page 
+A lot more documentation and the issue tracker can be found on the `github page
 <http://github.com/samuraisam/pyapns>`.
 """
 
 setup(
   name="pyapns",
-  version="0.4.0",
+  version="0.5.0",
   description="A universal Apple Push Notification Service (APNS) provider.",
   long_description=DOC,
   author="Samuel Sutch",
   author_email="samuraiblog@gmail.com",
   license="MIT",
-  url="http://github.com/samuraisam/pyapns/tree/master",
-  download_url="http://github.com/samuraisam/pyapns/tree/master",
+  url="http://github.com/samuraisam/pyapns/tree/v50",
+  download_url="http://github.com/samuraisam/pyapns/tree/v50",
   classifiers = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Beta',
     'Environment :: Web Environment',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
@@ -60,5 +60,5 @@ setup(
     'Topic :: Software Development :: Libraries :: Python Modules'],
   packages=['pyapns'],
   package_data={},
-  install_requires=['Twisted>=8.2.0', 'pyOpenSSL>=0.10']
+  install_requires=['Twisted>=8.2.0', 'pyOpenSSL>=0.10', 'python-epoll']
 )
